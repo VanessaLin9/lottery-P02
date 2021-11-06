@@ -1,5 +1,6 @@
-const ingot = Number(req.body.ingot)
-const ticket = Number(req.body.ticket)
+const ingot = document.querySelector(".ingot")
+const ticket =document.querySelector(".ticket")
+const submit = document.querySelector("#submit")
 const error = []
 const success = []
 
