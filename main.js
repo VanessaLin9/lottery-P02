@@ -1,19 +1,26 @@
-const ingot = document.querySelector(".ingot")
-const ticket =document.querySelector(".ticket")
+const ingot = document.getElementById('ingot')
+const ticket = document.querySelector("#ticket")
 const submit = document.querySelector("#submit")
-const error = []
-const success = []
+
+let error = []
+let success = []
+
+submit.addEventListener('click', () => {
+  console.log('yo')
+})
 
   if (!ingot) {
     error.push('請輸入元寶數量') 
-    return res.render('index',{ticket, error})
+    
   }
   if (!ticket) {
     error.push('請輸入千機卷數量') 
-    return res.render('index',{ingot, error})
+    
   }
 
- // 計算要課多少元寶才能補足500抽
+// 計算要課多少元寶才能補足500抽
+function calculate() {
+
 let y = (500- ticket) //先用完千機卷後需要幾抽
 
 
@@ -32,6 +39,8 @@ leftIngotmonoR = Math.floor(leftIngotmono / 288) //單抽可以抽幾次
 let left = leftIngotmono % 288//單抽完會剩幾顆
 let donee = total - ingot
 let final = (leftIngotTen * 10 ) + leftIngotmonoR + ticket
+} 
+ 
 
 
 //計算回報
