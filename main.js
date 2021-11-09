@@ -1,8 +1,17 @@
 const ingot = document.getElementById('ingot')
 const ticket = document.querySelector("#ticket")
 const submit = document.querySelector("#submit")
+const message = document.querySelector('#message')
 
 let show = []  
+
+function addItem(){
+  let newItem = document.createElement("li")
+  newItem.innerHTML = `
+  <label>qq</label>
+  `
+  message.appendChild(newItem)
+}
 
 submit.addEventListener('click', () => {
 
@@ -34,7 +43,6 @@ leftIngotmonoR = Math.floor(leftIngotmono / 288) //單抽可以抽幾次
 let left = leftIngotmono % 288//單抽完會剩幾顆
 let donee = total - Number(ingot.value)
 let final = (leftIngotTen * 10 ) + leftIngotmonoR + Number(ticket.value)
-console.log(final)
 
 //計算回報
 if (Number(ingot.value) >= 129500 || Number(ticket.value) >= 500) {
@@ -47,8 +55,9 @@ if (Number(ingot.value) >= 129500 || Number(ticket.value) >= 500) {
   show.push (`.........或著你要不要考慮再課 ${donee} 顆元寶一口氣500抽阿XDDD `)
 }}
 
-
+addItem()
 console.log(show)
+
 
  
 })
