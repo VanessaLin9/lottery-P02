@@ -3,19 +3,24 @@ const ticket = document.querySelector("#ticket")
 const submit = document.querySelector("#submit")
 const message = document.querySelector('#message')
 
-let show = []  
 
-function addItem(){
+function addItem(show){
+  message.innerHTML=''
+
+  show.forEach(element => {
   let newItem = document.createElement("li")
+  
   newItem.innerHTML = `
-  <label>qq</label>
+  <label>${element}</label>
   `
   message.appendChild(newItem)
+  });
+  
 }
 
 submit.addEventListener('click', () => {
 
-show = []  
+let show = []  
 
 // 計算要課多少元寶才能補足500抽
 
@@ -55,9 +60,9 @@ if (Number(ingot.value) >= 129500 || Number(ticket.value) >= 500) {
   show.push (`.........或著你要不要考慮再課 ${donee} 顆元寶一口氣500抽阿XDDD `)
 }}
 
-addItem()
-console.log(show)
+addItem(show)
 
+show = []
 
  
 })
