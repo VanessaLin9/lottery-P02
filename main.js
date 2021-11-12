@@ -2,6 +2,7 @@ const ingot = document.getElementById('ingot')
 const ticket = document.querySelector("#ticket")
 const submit = document.querySelector("#submit")
 const message = document.querySelector('#message')
+const renew = document.querySelector("#renew")
 
 
 function addItem(show){
